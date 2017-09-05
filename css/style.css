@@ -1,0 +1,227 @@
+/*
+   _      _            _                             
+  / \  __| |__ _ _ _ _| |   __ __ __ __     ___ __ _ 
+ / ^ \/ _` / _` | ' ' | |__/ _ \ V / -_) _ / __/ _` |
+/_/ \_\__,_\__,_|_|_|_|____\___/\_/\___|(_)\___\__,_|
+
+Awesome Board Game Reviews
+ 
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html, body {
+	position: relative;
+	background-color: black;
+	margin: auto;
+	padding: 0;
+}
+
+#site-div {
+	width: 1300px;
+	height: 700px;
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+}
+
+#content {
+    width: 100%;
+	height: 100%; 
+	position: absolute;
+	overflow: hidden;
+}
+
+#canvas {
+	position: absolute;
+	z-index: 0;
+}
+
+#shadow {
+	display: none;
+	width: 1300px;
+	height: 700px;
+	position: absolute;
+	z-index: 1;
+	background-image: url("../images/shadow.png");
+}
+
+#new {
+	width: 1300px;
+	height: 700px;
+	position: absolute;
+	z-index: 2;
+	background-image: url("../images/play.jpg");
+	background-size: 100%;
+}
+
+#pause {
+	display: none;
+	width: 385px;
+	height: 177px;
+	position: absolute;
+	z-index: 2;
+	top: 262px;
+	left: 458px;
+	background-image: url("../images/pause.png");
+	background-size: 100%;
+}
+
+#settings {
+	width: 385px;
+	height: 538px;
+	position: absolute;
+	z-index: 2;
+	top: -550px;
+	left: 458px;
+	background-image: url("../images/settings.png");
+	background-size: 100%;
+}
+
+#defeated {
+	width: 385px;
+	height: 477px;
+	position: absolute;
+	z-index: 2;
+	top: -550px;
+	left: 458px;
+	background-image: url("../images/defeated.png");
+	background-size: 100%;
+}
+
+#completed {
+	width: 478px;
+	height: 667px;
+	position: absolute;
+	z-index: 2;
+	top: -700px;
+	left: 407px;
+	background-image: url("../images/completed.png");
+	background-size: 100%;
+}
+
+#score {
+	display: none; 
+	width: 307px;
+	height: 51px;
+	position: absolute;
+	z-index: 2;
+	top: 100px;
+	left: 83px;
+	background-image: url("../images/score.png");
+	background-size: 100%;
+}
+
+#nextmission {
+	width: 478px;
+	height: 667px;
+	position: absolute;
+	z-index: 2;
+	top: -700px;
+	left: 407px;
+	background-image: url("../images/nextmission.png");
+	background-size: 100%;
+}
+
+#mission-ID {
+	width: 478px;
+	height: 60px;
+	position: absolute;
+	z-index: 2;
+	top: 150px;
+	left: 0;
+	text-align: center;
+	font-family: 'OpenSansRegular';
+	font-size: 1.6em;
+	color: black;
+}
+
+#mission-name {
+	width: 478px;
+	height: 60px;
+	position: absolute;
+	z-index: 2;
+	top: 200px;
+	left: 0;
+	text-align: center;
+	font-family: 'OpenSansRegular';
+	font-size: 2.4em;
+	color: black;	
+}
+
+#mission-up {
+	width: 478px;
+	height: 60px;
+	position: absolute;
+	z-index: 2;
+	top: 262px;
+	font-family: 'OpenSansRegular';
+	font-size: 1.5em;
+	color: black;
+}
+
+#mission-up0 {
+	position: absolute;
+	display: inline-block;
+	left: 102px;
+}
+#mission-up1 {
+	position: absolute;
+	display: inline-block;
+	left: 182px;
+}
+#mission-up2 {
+	position: absolute;
+	display: inline-block;
+	left: 262px;
+}
+#mission-up3 {
+	position: absolute;
+	display: inline-block;
+	left: 342px;
+}
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../fonts/open-sans-fontfacekit/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/open-sans-fontfacekit/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/open-sans-fontfacekit/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/open-sans-fontfacekit/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/open-sans-fontfacekit/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansSemibold';
+    src: url('../fonts/open-sans-fontfacekit/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/open-sans-fontfacekit/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/open-sans-fontfacekit/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/open-sans-fontfacekit/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/open-sans-fontfacekit/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
